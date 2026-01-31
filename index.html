@@ -1,81 +1,101 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-<meta charset="UTF-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ApkVault</title>
 
-<!-- ✅ تفعيل الزووم -->
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <style>
+    /* إعدادات عامة */
+    body{
+      margin:0;
+      height:100vh;
+      background:linear-gradient(135deg,#00c9a7,#00a896);
+      font-family:Arial, sans-serif;
+      color:#fff;
+      display:flex;
+      flex-direction:column;
+    }
 
-<title>ApkVault - Login</title>
+    /* التولبار */
+    .toolbar{
+      height:55px;
+      background:#0f3d36;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:20px;
+      font-weight:bold;
+      box-shadow:0 2px 5px rgba(0,0,0,.3);
+    }
 
-<style>
-body{
-  margin:0;
-  height:100vh;
-  background:linear-gradient(135deg,#00c9a7,#00a896);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-family:Arial;
-}
+    /* محتوى الصفحة */
+    .content{
+      flex:1;
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
+      padding-top:60px; /* ← مكان الكارد */
+    }
 
-.box{
-  background:#0b3d36;
-  padding:30px;
-  border-radius:16px;
-  text-align:center;
-  width:90%;
-  max-width:320px;
-  color:#fff;
-}
+    /* الكارد */
+    .card{
+      background:#0b3a34;
+      width:280px;
+      padding:20px;
+      border-radius:12px;
+      text-align:center;
+      box-shadow:0 10px 25px rgba(0,0,0,.4);
+    }
 
-input{
-  width:100%;
-  padding:14px;
-  border:none;
-  border-radius:10px;
-  font-size:16px;
-  margin:15px 0;
-}
+    .card h2{
+      margin:0;
+      font-size:18px;
+      letter-spacing:1px;
+    }
 
-button{
-  width:100%;
-  padding:14px;
-  border:none;
-  border-radius:10px;
-  background:linear-gradient(90deg,#0066ff,#00c6ff);
-  color:#fff;
-  font-size:16px;
-  font-weight:bold;
-}
+    .card p{
+      margin:10px 0 20px;
+      font-size:14px;
+      opacity:.9;
+    }
 
-.error{
-  color:#ffb3b3;
-  display:none;
-  margin-top:10px;
-}
-</style>
+    /* الأزرار */
+    .btn{
+      width:100%;
+      padding:12px;
+      margin:8px 0;
+      border:none;
+      border-radius:8px;
+      font-size:16px;
+      color:#fff;
+      cursor:pointer;
+      background:linear-gradient(135deg,#1e90ff,#0066ff);
+    }
+
+    .btn:hover{
+      opacity:.9;
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="box">
-  <h2>🔒 إدخال كلمة السر</h2>
-  <input type="password" id="pass" placeholder="كلمة السر">
-  <button onclick="login()">دخول</button>
-  <div class="error" id="err">❌ كلمة السر غير صحيحة</div>
-</div>
+  <!-- التولبار -->
+  <div class="toolbar">
+    ApkVault
+  </div>
 
-<script>
-function login(){
-  if(document.getElementById("pass").value === "1991"){
-    window.location.href="language.html";
-  }else{
-    document.getElementById("err").style.display="block";
-  }
-}
-</script>
+  <!-- المحتوى -->
+  <div class="content">
+    <div class="card">
+      <h2>GET FREE DIAMONDS</h2>
+      <p>اختر لغة الموقع</p>
+
+      <button class="btn">العربية</button>
+      <button class="btn">English</button>
+    </div>
+  </div>
 
 </body>
 </html>
