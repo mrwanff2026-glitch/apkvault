@@ -1,169 +1,132 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ApkVault</title>
+<title>واتساب عمر</title>
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial, sans-serif;
-}
-
-/* الخلفية */
 body{
-  background:#ffffff;
-  height:100vh;
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#0f2f2f;
+  color:#fff;
 }
 
-/* تولبار */
-.toolbar{
-  height:55px;
-  background:#0f3d36;
-  color:#fff;
+/* التولبار */
+header{
+  height:56px;
+  background:#0b3a3a;
   display:flex;
   align-items:center;
   justify-content:space-between;
   padding:0 15px;
 }
 
-/* أزرار التولبار */
-.toolbar button{
-  background:none;
-  border:none;
-  color:#fff;
+.icon{
   font-size:22px;
   cursor:pointer;
 }
 
-/* العنوان */
-.toolbar .title{
+.title{
   font-size:18px;
   font-weight:bold;
 }
 
-/* الدراور */
-.drawer{
-  position:fixed;
-  top:0;
-  left:-260px;
-  width:260px;
-  height:100%;
-  background:#0b3a34;
-  color:#fff;
-  transition:.3s;
-  padding:20px;
-  z-index:1000;
-}
-
-.drawer h3{
-  margin-bottom:20px;
-}
-
-.drawer a{
-  display:block;
-  color:#fff;
-  text-decoration:none;
-  margin:15px 0;
-  font-size:16px;
-}
-
-/* خلفية عند فتح الدراور */
-.overlay{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,.4);
-  display:none;
-  z-index:999;
-}
-
 /* المحتوى */
-.content{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  height:calc(100vh - 55px);
+.container{
+  padding:20px;
 }
 
-/* كارد اختيار اللغة */
-.card{
-  width:280px;
+.app-card{
+  background:#102f2f;
+  border-radius:16px;
   padding:20px;
-  border-radius:12px;
-  box-shadow:0 10px 25px rgba(0,0,0,.15);
+  max-width:500px;
+  margin:20px auto;
   text-align:center;
 }
 
-.card h2{
-  margin-bottom:10px;
+.app-name{
+  font-size:26px;
+  font-weight:bold;
+  margin-bottom:5px;
 }
 
-.card p{
-  margin-bottom:20px;
-  color:#555;
+.version{
+  color:#7adcdc;
+  margin-bottom:15px;
 }
 
-.btn{
-  width:100%;
-  padding:12px;
-  margin:8px 0;
-  border:none;
-  border-radius:8px;
-  font-size:16px;
-  cursor:pointer;
-  background:linear-gradient(135deg,#1e90ff,#0066ff);
+.stats{
+  display:flex;
+  justify-content:space-around;
+  margin:15px 0;
+  font-size:14px;
+  color:#cfcfcf;
+}
+
+.description{
+  margin:20px 0;
+  line-height:1.8;
+  font-size:15px;
+}
+
+/* زر التحميل */
+.download-btn{
+  display:block;
+  background:#0aa1a7;
   color:#fff;
+  text-decoration:none;
+  padding:16px;
+  border-radius:14px;
+  font-size:20px;
+  font-weight:bold;
+  margin-top:25px;
+}
+
+.download-btn:hover{
+  background:#0bc0c7;
 }
 </style>
 </head>
 
 <body>
 
-<!-- دراور -->
-<div class="drawer" id="drawer">
-  <h3>ApkVault</h3>
-  <a href="#">الرئيسية</a>
-  <a href="#">من نحن</a>
-  <a href="#">تواصل معنا</a>
-</div>
-
-<div class="overlay" id="overlay" onclick="closeDrawer()"></div>
-
-<!-- تولبار -->
-<div class="toolbar">
-  <button onclick="openDrawer()">☰</button>
+<!-- التولبار -->
+<header>
+  <span class="icon">☰</span>
   <div class="title">ApkVault</div>
-  <button>🔍</button>
-</div>
+  <span class="icon">🔍</span>
+</header>
 
 <!-- المحتوى -->
-<div class="content">
-  <div class="card">
-    <h2>اختر لغة الموقع</h2>
-    <p>Select website language</p>
+<div class="container">
 
-    <button class="btn">العربية</button>
-    <button class="btn">English</button>
+  <div class="app-card">
+    <div class="app-name">واتساب عمر</div>
+    <div class="version">الإصدار الأخير</div>
+
+    <div class="stats">
+      <div>⭐ 4.6</div>
+      <div>⬇ ملايين التحميلات</div>
+      <div>📦 APK</div>
+    </div>
+
+    <div class="description">
+      واتساب العادي هو تطبيق مراسلة فورية يتيح لك إرسال الرسائل النصية،
+      إجراء المكالمات الصوتية والمرئية، ومشاركة الصور والفيديوهات
+      بسهولة وأمان مع الأصدقاء والعائلة.
+    </div>
+
+    <!-- زر التحميل -->
+    <a class="download-btn"
+       href="https://drive.google.com/uc?export=download&id=10cU73vl3K1p8Ub6bIdSM6LPxQsEB0oC3">
+       ⬇ تحميل
+    </a>
   </div>
+
 </div>
-
-<script>
-function openDrawer(){
-  document.getElementById("drawer").style.left="0";
-  document.getElementById("overlay").style.display="block";
-}
-
-function closeDrawer(){
-  document.getElementById("drawer").style.left="-260px";
-  document.getElementById("overlay").style.display="none";
-}
-</script>
 
 </body>
 </html>
